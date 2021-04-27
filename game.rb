@@ -6,13 +6,13 @@ class Game
   def initialize(p1, p2)
     @player = [p1, p2]
     @current_index = 0
-    @current_player = @player[current_index]
+    @current_player = @player[@current_index]
   end
 
   def minus_life
     @current_player.life -= 1
     if @current_player.life == 0
-      puts "#{@current_player.name} wins with a score of #{lives}/3!"
+      puts "#{@current_player.name} wins with a score of #{current_player.life}/3!"
       puts "----- GAME OVER -----"
     end
   end
@@ -25,6 +25,7 @@ class Game
     if @current_player = player[0]
       @current_player = player[1]
     else
+      @current_player = player[1]
       @current_player = player[0]
     end
   end
